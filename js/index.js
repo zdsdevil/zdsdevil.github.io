@@ -447,7 +447,7 @@ S.Dot.prototype = {
         } else {
           this.move(new S.Point({
             x: this.p.x + (Math.random() * 50) - 25,
-            y: this.p.y + (Math.random() * 50) - 25,
+            y: this.p.y + (Math.random() * 50) - 25
           }));
         }
       }
@@ -600,7 +600,7 @@ S.ShapeBuilder = (function () {
         for (var x = 0; x < width; x += gap) {
           dots.push(new S.Point({
             x: x,
-            y: y,
+            y: y
           }));
         }
       }
