@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="Keywords" content=""/>
+  <meta name="Description" content=""/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta content="telephone=no" name="format-detection"/>
+  <meta content="email=no" name="format-detection"/>
+  <title>Document</title>
+  <style>
+    .typewriter {
+      display: none;
+      width: 40em;
+      line-height: 1.6;
+      color: #333;
+      border: 1px solid #CCC;
+      padding: 1em 3em;
+      margin: 5em auto;
+    }
+
+    .typewriter:after {
+      content: "_";
+      animation: flash .6s steps(2, start) infinite;
+      -webkit-animation: flash .6s steps(2, start) infinite;
+    }
+
+    .typewriter.gameover:after {
+      display: none;
+    }
+
+    @keyframes flash {
+      0% {
+        visibility: visible;
+      }
+      100% {
+        visibility: hidden;
+      }
+    }
+
+    @-webkit-keyframes flash {
+      0% {
+        visibility: visible;
+      }
+      100% {
+        visibility: hidden;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="typewriter">
+  1. Whatever is worth doing is worth doing well.<br/>
+  &emsp;任何值得做的，就把它做好。<br/><br/>
+
+  2. Happiness is a way station between too much and too little.<br/>
+  &emsp;幸福是太多和太少之间的一站。<br/><br/>
+
+  3. In love folly is always sweet.<br/>
+  &emsp;恋爱中，干傻事总是让人感到十分美妙。<br/><br/>
+
+  4. The hard part isn’t making the decision. It’s living with it.<br/>
+  &emsp;做出决定并不困难，困难的是接受决定。<br/><br/>
+
+  5. Your happy passer-by all knows, my distressed there is no place hides.<br/>
+  &emsp;你的幸福路人皆知，我的狼狈无处遁形。<br/><br/>
+
+  6. You may be out of my sight, but never out of my mind.<br/>
+  &emsp;你也许已走出我的视线，但从未走出我的思念。
+</div>
+<script>
+  (function () {
+    var typewriter = document.querySelector(".typewriter"),
+      code = typewriter.innerHTML,
+      pos = 0,
+      len = code.length;
+    typewriter.innerHTML = "";
+    typewriter.style.display = "block";
+    function typewriting() {
+      pos++;
+      if (pos <= len) {
+        switch (code.charAt(pos)) {
+          case "<":
+            pos = code.indexOf(">", pos);
+            break;
+          case "&":
+            pos = code.indexOf(";", pos);
+            break;
+        }
+        typewriter.innerHTML = code.substring(0, pos);
+        setTimeout(typewriting, 100);
+      }
+      else {
+        typewriter.classList.add("gameover");
+      }
+    }
+
+    typewriting();
+  })();
+
+</script>
+</body>
+</html>

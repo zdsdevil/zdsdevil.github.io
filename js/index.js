@@ -36,7 +36,7 @@ var S = {
 S.Drawing = (function () {
   var canvas,
     context,
-    renderFn
+    renderFn;
   requestFrame = window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
     window.mozRequestAnimationFrame ||
@@ -560,7 +560,7 @@ S.ShapeBuilder = (function () {
 
       image.onerror = function () {
         callback(S.ShapeBuilder.letter('What?'));
-      }
+      };
 
       image.src = url;
     },
