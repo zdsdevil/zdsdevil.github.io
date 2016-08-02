@@ -5,7 +5,7 @@
   $('#fullpage').fullpage();
 
   var myBirth = new Date('1989-09-23');
-  var exp = new Date('2014-06-01');
+  var exp = new Date('2014-01-01');
   var curTime = new Date();
   var expText;
 
