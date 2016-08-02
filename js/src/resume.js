@@ -6,7 +6,8 @@
 
   $(".play").click(function() {
     alert(1);
-    $("#audio").play();
+    var audioEle = document.getElementById("audio");
+    audioEle.play();
   });
 
   var myBirth = new Date('1989-09-23');
