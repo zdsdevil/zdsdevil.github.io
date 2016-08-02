@@ -4,7 +4,18 @@
 (function() {
   $('#fullpage').fullpage();
 
-  $("#audio")[0].play();
+  var audio = document.getElementById('audio');
+  audio.oncanplay = playmusic();
+
+  var firsttaped = 0;
+  function playmusic(){
+    $('html').on('touchstart',function(){
+      if(firsttaped == 0){
+        audio.play();
+        firsttaped = 1;
+      }
+    });
+  };
 
   var myBirth = new Date('1989-09-23');
   var exp = new Date('2014-6-1');
