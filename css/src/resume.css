@@ -2,6 +2,7 @@
   width: 100%;
   height: 100%;
   background: url(../../img/white_brick_wall.png) repeat;
+  text-align: center;
 }
 
 /* music */
@@ -22,10 +23,11 @@
 
 
 .avatar {
-  display: block;
   width: 150px;
   height: 150px;
   margin: auto;
+  background: url(../../img/tf.jpg);
+  background-size: 100% 100%;
   border-radius: 50%;
 }
 
