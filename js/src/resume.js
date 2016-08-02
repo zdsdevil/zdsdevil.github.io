@@ -6,17 +6,11 @@
 
   var audio = document.getElementById('audio');
 
-  $('html').on('touchstart',function(){
-    audio.play();
-  });
-
-  $('play').on('touchatart',function(){
-    audio.pause();
-  });
   var myBirth = new Date('1989-09-23');
-  var exp = new Date('2014-6-1');
+  var exp = new Date('2014-06-01');
   var curTime = new Date();
   var expText;
+
   $(".age").text(curTime.getFullYear() - myBirth.getFullYear());
 
   if((curTime.getMonth() - exp.getMonth()) >= 6 ) {
