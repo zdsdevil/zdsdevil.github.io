@@ -4,11 +4,7 @@
 (function() {
   $('#fullpage').fullpage();
 
-  $(".play").click(function() {
-    alert(1);
-    var audioEle = document.getElementById("audio");
-    audioEle.play();
-  });
+  $("#audio")[0].play();
 
   var myBirth = new Date('1989-09-23');
   var exp = new Date('2014-6-1');
