@@ -9,6 +9,10 @@
     audio.play();
   });
 
+  $('play').on('touchatart',function(){
+    audio.pause();
+  });
+
   var myBirth = new Date('1989-09-23');
   var exp = new Date('2014-6-1');
   var curTime = new Date();
