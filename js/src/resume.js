@@ -5,18 +5,14 @@
   $('#fullpage').fullpage();
 
   var audio = document.getElementById('audio');
-  audio.oncanplay = playmusic();
 
-  var firsttaped = 0;
-  function playmusic(){
-    $('html').on('touchstart',function(){
-      if(firsttaped == 0){
-        audio.play();
-        firsttaped = 1;
-      }
-    });
-  };
+  $('html').on('touchstart',function(){
+    audio.play();
+  });
 
+  $('play').on('touchatart',function(){
+    audio.pause();
+  });
   var myBirth = new Date('1989-09-23');
   var exp = new Date('2014-6-1');
   var curTime = new Date();
