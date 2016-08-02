@@ -6,21 +6,65 @@
 }
 
 /* music */
-@-webkit-keyframes reverseRotataZ{
-  0%{-webkit-transform: rotateZ(0deg);}
-  100%{-webkit-transform: rotateZ(-360deg);}
+@-webkit-keyframes reverseRotataZ {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(-360deg);
+  }
 }
-@-webkit-keyframes rotataZ{
-  0%{-webkit-transform: rotateZ(0deg);}
-  100%{-webkit-transform: rotateZ(360deg);}
-}
-#musicControl { position:fixed;right:10px;top:20px;margin-top:0;display:inline-block;z-index:99999999}
-#musicControl a { display:inline-block;width: 25px; height: 25px;overflow:hidden;background:url('../../img/mcbg.png') no-repeat;background-size:100%;}
-#musicControl a audio{width:100%;height:56px;}
-#musicControl a.stop { background-position:left bottom;}
-#musicControl a.on { background-position:0px 1px;-webkit-animation: reverseRotataZ 1.2s linear infinite;}
-#music_play_filter{width:100%;height:100%;overflow:hidden;position:fixed;top:0;left:0;z-index:99999998;}
 
+@-webkit-keyframes rotataZ {
+  0% {
+    -webkit-transform: rotateZ(0deg);
+  }
+  100% {
+    -webkit-transform: rotateZ(360deg);
+  }
+}
+
+#musicControl {
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  margin-top: 0;
+  display: inline-block;
+  z-index: 99999999
+}
+
+#musicControl a {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  background: url('../../img/mcbg.png') no-repeat;
+  background-size: 100%;
+}
+
+#musicControl a audio {
+  width: 100%;
+  height: 56px;
+}
+
+#musicControl a.stop {
+  background-position: left bottom;
+}
+
+#musicControl a.on {
+  background-position: 0px 1px;
+  -webkit-animation: reverseRotataZ 1.2s linear infinite;
+}
+
+#music_play_filter {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999998;
+}
 
 .avatar {
   width: 150px;
@@ -29,7 +73,7 @@
   background: url(../../img/tf.jpg);
   background-size: 100% 100%;
   border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0,0,0,.5);
+  box-shadow: 0 0 5px rgba(0, 0, 0, .5);
 }
 
 .introduce {
@@ -39,7 +83,6 @@
   color: #333;
   text-align: center;
 }
-
 
 .introduce p:nth-child(1) {
   -webkit-animation: animations2 2s ease-out 0.5s backwards;
@@ -72,6 +115,7 @@
   -ms-animation: animations 1s ease-in-out 4.5s backwards;
   animation: animations 1s ease-in-out 4.5s backwards;
 }
+
 .introduce p:nth-child(5) {
   -webkit-animation: animations 1s ease-in-out 5.5s backwards;
   -moz-animation: animations 1s ease-in-out 5.5s backwards;
@@ -79,6 +123,7 @@
   -ms-animation: animations 1s ease-in-out 5.5s backwards;
   animation: animations 1s ease-in-out 5.5s backwards;
 }
+
 @-webkit-keyframes animations {
   0% {
     opacity: 0;
@@ -255,6 +300,47 @@
     opacity: .8;
   }
   100% {
+    opacity: 1;
+  }
+}
+
+.title {
+  opacity: 0;
+}
+.title p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.titleAnimate{
+  -webkit-animation: titleAnimate 1s linear;
+  -o-animation: titleAnimate 1s linear;
+  animation: titleAnimate 1s linear;
+}
+
+@-webkit-keyframes titleAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes titleAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes titleAnimate {
+  from {
+    opacity: 0;
+  }
+  to {
     opacity: 1;
   }
 }
