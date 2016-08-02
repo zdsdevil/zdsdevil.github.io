@@ -20,6 +20,13 @@
   text-align: center;
 }
 
+.play{
+  display: block;
+  width: 50px;
+  height: 25px;
+  margin: auto;
+}
+
 .introduce p:nth-child(1) {
   -webkit-animation: animations 3s ease-out 1s backwards;
   -moz-animation: animations 3s ease-out 1s backwards;
