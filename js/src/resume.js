@@ -3,12 +3,15 @@
  */
 (function() {
   $('#fullpage').fullpage({
-      anchors: ['page1', 'page2', 'page3', 'page4'],
-      afterLoad: function(anchorLink, index) {
-          var _id = '#page' + index;
-          var loadedSection = $(_id);
-          loadedSection.find(".title").addClass("titleAnimate");
-      }
+    anchors: ['page1', 'page2', 'page3', 'page4'],
+    afterRender: function() {
+    },
+    afterLoad: function(anchorLink, index) {
+      $(".title").addClass("title-animate");
+    },
+    onLeave:function(index , nextIndex, direction) {
+      $(".title").removeClass("title-animate");
+    }
   });
 
   var myBirth = new Date('1989-09-23');
