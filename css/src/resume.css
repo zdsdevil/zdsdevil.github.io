@@ -52,7 +52,7 @@
 }
 
 #musicControl a.on {
-  background-position: 0px 1px;
+  background-position: 0 1px;
   -webkit-animation: reverseRotataZ 1.2s linear infinite;
 }
 
@@ -328,8 +328,34 @@
   70%{-moz-transform:scale(.9)}
   100%{-moz-transform:scale(1)}
 }
-
-.letter > div{
-  float: left;
-  margin-right: 10px;
+#preview{
+  position: relative;
+  width: 80%;
+  margin: 20px auto;
+}
+#preview img{
+  width: 100%;
+  display: block;
+}
+.hide{
+  display: none;
+}
+.btns{
+  margin: 10px 20px;
+}
+.chun,.egg{
+  display: block;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 3px;
+  background: #79a8ae;
+  text-align: center;
+}
+.chun-pic{
+  position: absolute;
+  display: block;
+  width: 20px;
 }

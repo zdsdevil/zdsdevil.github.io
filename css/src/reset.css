@@ -90,3 +90,9 @@ table {
 }
 
 /***CSS RESET***/
+.fl{
+  float: left;
+}
+.fr{
+  float: right;
+}
