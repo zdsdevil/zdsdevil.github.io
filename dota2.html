@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>devil_zds</title>
+</head>
+<script src="js/jquery.min.js"></script>
+<script>
+  /*steam秘钥*/
+  var steamKey = '87A245287315FD64C41D68EA69127C92';
+  var steamApiUrl = 'http://api.steampowered.com/IDOTA2Match_570';
+
+  (function() {
+    $.get(steamApiUrl + '/GetLeagueListing/V001/?format=json&key=' + steamKey,function(res) {
+      console.log(res)
+    })
+  })();
+</script>
+</body>
+</html>
