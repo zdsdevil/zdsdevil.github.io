@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>devil_zds</title>
+</head>
+<body>
+<script src="js/lib/jquery-1.11.3.min.js"></script>
+<script>
+  /*steam秘钥*/
+  var steamKey = '87A245287315FD64C41D68EA69127C92';
+  var steamApiUrl = 'http://api.steampowered.com/IDOTA2Match_570';
+
+  (function() {
+    $.get('https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V001/?key=87A245287315FD64C41D68EA69127C92&match_id=1367469919',function(res) {
+      console.log(res)
+    })
+  })();
+</script>
+</body>
+</html>
