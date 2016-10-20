@@ -14,7 +14,7 @@
     random_pos(chun);
   });
   var random_pos = function(chun) {
-    var width = $("#preview")
+    var width = $("#preview");
     $(chun).css({
       top: Math.random()*200 + 'px',
       left: Math.random()*200 + 'px',
