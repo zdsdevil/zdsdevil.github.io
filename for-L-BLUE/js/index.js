@@ -1,0 +1,1 @@
+/** * Created by devil_zds on 2017/2/7. */$(function() {    FastClick.attach(document.body);    $('.page-warp').css('min-height', window.innerHeight);});
