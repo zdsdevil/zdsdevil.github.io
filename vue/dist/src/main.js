@@ -8,12 +8,17 @@ var _vueAmap = require('vue-amap');
 
 var _vueAmap2 = _interopRequireDefault(_vueAmap);
 
+var _vueResource = require('vue-resource');
+
+var _vueResource2 = _interopRequireDefault(_vueResource);
+
 var _App = require('./App.vue');
 
 var _App2 = _interopRequireDefault(_App);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+_vue2.default.use(_vueResource2.default);
 _vue2.default.use(_vueAmap2.default);
 _vueAmap2.default.initAMapApiLoader({
     key: '911fe5dcb6e74da0011d2c27df758b5c',
