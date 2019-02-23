@@ -1,0 +1,381 @@
+/**
+ * Created by zds on 2015/11/19.
+ */
+/***CSS RESET***/
+/** 清除内外边距 **/
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+blockquote,
+/* structural elements 结构元素 */
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+/* list elements 列表元素 */
+pre,
+/* text formatting elements 文本格式元素 */
+form,
+fieldset,
+legend,
+button,
+input,
+textarea,
+/* form elements 表单元素 */
+th,
+td
+
+/* table elements 表格元素 */
+  {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  line-height: 1.6;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/** 设置默认字体 **/
+body,
+button,
+input,
+select,
+textarea
+
+/* for ie */
+  {
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", STHeiti, "Microsoft Yahei", Tahoma, Simsun, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+/* 将斜体扶正 */
+code,
+kbd,
+pre,
+samp {
+  font-family: courier new, courier, monospace;
+}
+
+/* 统一等宽字体 */
+small {
+  font-size: 12px;
+}
+
+/* 小于 12px 的中文很难阅读，让 small 正常化 */
+
+/** 重置列表元素 **/
+ul,
+ol {
+  list-style: none;
+}
+
+/** 重置文本格式元素 **/
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/** 重置表单元素 **/
+legend {
+  color: #000;
+}
+
+/* for ie6 */
+fieldset,
+img {
+  border: 0;
+}
+
+/* img 搭车：让链接里的 img 无边框 */
+button,
+input,
+select,
+textarea {
+  font-size: 100%;
+}
+
+/* 使得表单元素在 ie 下能继承字体大小 */
+/* 注：optgroup 无法扶正 */
+
+/** 重置表格元素 **/
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 清除浮动 */
+.ks-clear:after,
+.clear:after {
+  content: '\20';
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+.ks-clear,
+.clear {
+  *zoom: 1;
+}
+
+/***CSS RESET***/
+
+/***通用样式***/
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+.p16 {
+  padding: 16px;
+}
+
+.p15 {
+  padding: 15px;
+}
+
+.bg-main {
+  background: #f3f4fa;
+}
+
+.mt-5 {
+  margin-top: 5px;
+}
+
+.mr-5 {
+  margin-right: 5px;
+}
+
+.mr-10 {
+  margin-right: 10px;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-15 {
+  margin-bottom: 15px;
+}
+
+.pr-20 {
+  padding-right: 20px;
+}
+
+.pr-40 {
+  padding-right: 40px;
+}
+
+/* 字号 */
+.fs-14 {
+  font-size: 14px;
+}
+
+.fs-12 {
+  font-size: 12px;
+}
+
+.fs-16 {
+  font-size: 16px;
+}
+
+.fs-18 {
+  font-size: 18px;
+}
+
+/*颜色*/
+.f-c1 {
+  color: #ffe04e;
+}
+
+.f-c2 {
+  color: #282828;
+}
+
+.f-c3 {
+  color: #737373;
+}
+
+.f-c4 {
+  color: #a3a3a3;
+}
+
+.f-c5 {
+  color: #fa7829;
+}
+
+.f-c6 {
+  color: #ffd12e;
+}
+
+.f-g1 {
+  color: #f3f4fa;
+}
+
+.f-g2 {
+  color: #e6e6e6;
+}
+
+.f-g3 {
+  color: #f2f2f2;
+}
+
+.f-c666 {
+  color: #666;
+}
+
+.bg-c1 {
+  background: #ffe04e;
+}
+
+.bg-c2 {
+  background: #282828;
+}
+
+.bg-c3 {
+  background: #737373;
+}
+
+.bg-c4 {
+  background: #a3a3a3;
+}
+
+.bg-c5 {
+  background: #fa7829;
+}
+
+.bg-c6 {
+  background: #ffd12e;
+}
+
+.bg-g1 {
+  background: #f3f4fa;
+}
+
+.bg-g2 {
+  background: #e6e6e6;
+}
+
+.bg-g3 {
+  background: #f2f2f2;
+}
+
+[v-cloak] {
+  display: none !important;
+}
+
+.hide-service-count {
+  display: none !important;
+}
+
+.bg-white {
+  background: #fff;
+}
+
+.btn {
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.btn-lg {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  font-size: 16px;
+}
+
+.border-radius-5 {
+  border-radius: 5px;
+}
+
+.btn-yello {
+  color: #333;
+  background: #ffe800;
+}
+
+.btn-orange {
+  color: #fff;
+  background: #fa7829;
+}
+
+.previewImg .ivu-modal-body {
+  max-height: 500px;
+  overflow: scroll;
+}
+
+html,body {
+  width: 100%;
+  height: 100%;
+}
