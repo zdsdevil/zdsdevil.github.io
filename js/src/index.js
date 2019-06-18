@@ -23,7 +23,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('Welcome|lin|zhi|xiong|#rectangle|#countdown 3||');
+      S.UI.simulate('Welcome|最|闲|有|钱|人|林|志|熊|#rectangle|#countdown 3||');
     }
 
     S.Drawing.loop(function () {
