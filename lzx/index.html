@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>林志熊</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animate.css">
+    <style>
+        .wrap {
+            width: 100%;
+            padding: 20px;
+        }
+
+        .wrap .header {
+            margin: 30px;
+        }
+
+        .wrap .header img {
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin: auto;
+            border: 1px solid #e6e6e6;
+            border-radius: 50%;
+        }
+
+        .wrap .nav {
+            width: 400px;
+            margin: 20px auto;
+        }
+
+        .wrap .nav li {
+            width: 25%;
+            font-size: 20px;
+            color: #333;
+            text-align: center;
+        }
+
+        .wrap .img-list {}
+
+        .wrap .img-list .item {
+            position: relative;
+            width: 20%;
+            height: 200px;
+            padding: 10px;
+        }
+
+        @media screen and (max-width: 500px) {
+            .wrap .nav {
+                width: 100%;
+                margin: 20px auto;
+                padding: 0 20px;
+            }
+
+            .wrap .nav li {
+                font-size: 14px;
+            }
+
+            .wrap .img-list .item {
+                position: relative;
+                width: 50%;
+                height: 100px;
+                padding: 10px;
+            }
+        }
+
+        .wrap .img-list .item img {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .wrap .img-list .item:hover img {
+            opacity: .5;
+        }
+
+        .wrap .img-list .item p {
+            display: none;
+            z-index: 1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            line-height: 200px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+
+        .wrap .img-list .item:hover p {
+            display: block;
+        }
+
+
+        .wrap .img-list {
+            -webkit-perspective: 1300px;
+            -moz-perspective: 1300px;
+            perspective: 1300px;
+        }
+
+        .wrap .img-list .item.animate {
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            -webkit-transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+            -moz-transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+            transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+            -webkit-animation: fallPerspective .8s ease-in-out forwards;
+            -moz-animation: fallPerspective .8s ease-in-out forwards;
+            animation: fallPerspective .8s ease-in-out forwards;
+        }
+
+        @-webkit-keyframes fallPerspective {
+            100% {
+                -webkit-transform: translateZ(0px) translateY(0px) rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fallPerspective {
+            100% {
+                -moz-transform: translateZ(0px) translateY(0px) rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fallPerspective {
+            100% {
+                transform: translateZ(0px) translateY(0px) rotateX(0deg);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="header">
+            <img src="img/x.png">
+        </div>
+        <ul class="nav clear">
+            <li class="fl" v-for="item in area" :class="item.type === cur_area ? 'animated animatedFast bounceIn' : ''"
+                @mouseover="navHover(item)">{{item.text}}</li>
+        </ul>
+        <ul id="imgList" class="img-list clear">
+            <li class="fl item aa" v-for="(item,index) in list" @mouseover="imgHover(index)" @mouseout="imgOut(index)">
+                <img :src="`img/${index%11}.jpg`">
+                <p :class="index  === cur_img ? 'animated animated fadeInUp' : ''">{{index}}.jpg</p>
+            </li>
+        </ul>
+    </div>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="js/vue.js"></script>
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/imagesloaded.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/AnimOnScroll.js"></script>
+    <script>
+        (function () {
+            var vm = new Vue({
+                el: '.wrap',
+                data: {
+                    area: [{
+                        type: 'Asia',
+                        text: '亚洲'
+                    }, {
+                        type: 'Europe',
+                        text: '欧洲'
+                    }, {
+                        type: 'America',
+                        text: '美洲'
+                    }, {
+                        type: 'Africa',
+                        text: '非洲'
+                    }],
+                    cur_area: '',
+                    list: new Array(121),
+                    cur_img: ''
+                },
+                methods: {
+                    navHover(item) {
+                        this.cur_area = item.type;
+                    },
+                    imgHover(index) {
+                        this.cur_img = index;
+                    }
+                }
+            })
+        })()
+    </script>
+    <script>
+    new AnimOnScroll( document.getElementById( 'imgList' ), {
+        minDuration : 0.4,
+        maxDuration : 0.7,
+        viewportFactor : 0.2
+    });
+    </script>
+</body>
+
+</html>
