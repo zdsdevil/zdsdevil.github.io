@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>love you</title>
+    <link rel="stylesheet" href="../css/src/reset.css">
+    <link rel="stylesheet" href="../css/lib/animate.css">
+    <style>
+        body {
+            background: #ff74a2;
+        }
+
+        .p1 {
+            margin: 15px;
+            font-size: 14px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .p1 span {
+            font-size: 8px;
+        }
+
+        .p2 {
+            margin: 25px;
+            font-size: 22px;
+            color: #fff;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+
+        .btns {
+            width: 88%;
+            margin: 40px auto;
+        }
+
+        .btns a {
+            display: block;
+            width: 40%;
+            height: 40px;
+            line-height: 40px;
+            font-size: 16px;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .btns .yes {
+            background: #5ada68;
+        }
+
+        .btns .no {
+            background: red;
+        }
+
+        .zzc-module {
+            position: relative;
+            z-index: 10;
+        }
+
+        .zzc-module .screen-zzc {
+            z-index: 11;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, .4);
+        }
+
+        .zzc-module .z-popup {
+            z-index: 12;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 80%;
+            height: 130px;
+            margin: auto;
+            padding: 30px;
+            background: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .zzc-module .z-popup p {
+            line-height: 20px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .zzc-module .z-popup a {
+            display: block;
+            width: 50%;
+            height: 30px;
+            margin: 30px auto 0;
+            line-height: 30px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #fff;
+            background: #ff74a2;
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page-wrap" v-cloak>
+        <p class="p1">小灵姐姐,追你那么久了<br><span>虽然我知道你大概率不会接受，但是还是要试一下</span></p>
+        <p class="p2">做我女朋友(老婆)好不好?</p>
+        <img src="../img/love.jpg">
+        <div class="btns clear">
+            <a class="fl yes" @click="yes">好</a>
+            <a class="fr no" @click="no">不好</a>
+        </div>
+        <div class="zzc-module" v-show="show">
+            <div class="screen-zzc"></div>
+            <div class="z-popup animatedFast" :class="popupClass">
+                <p>{{text}}</p>
+                <a @click="close">确定</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/lib/vue.js"></script>
+    <script>
+        (function () {
+            var vm = new Vue({
+                el: '.page-wrap',
+                data: {
+                    show: false,
+                    text: '爱你哦',
+                    popupClass: '',
+                    noTimes: 0,
+                    yesTimes: 0,
+                    noTextList: ['工资上交', '家务全包', '定居厦门', '保大', '不能放弃'],
+                    yesTextList: ['真的吗？你答应了？', '给我发消息吧，爱你', '快去发消息吧,激动的等待中...']
+                },
+                methods: {
+                    show_popup: function (text) {
+                        var self = this;
+                        self.show = true;
+                        self.popupClass = 'zoomIn';
+                        self.text = text;
+                    },
+                    close: function () {
+                        var self = this;
+                        self.popupClass = 'zoomOut';
+                        setTimeout(function () {
+                            self.show = false;
+                        }, 300)
+                    },
+                    yes: function () {
+                        var self = this;
+                        var len = self.yesTextList.length;
+                        if (self.yesTimes >= (len - 1)) {
+                            self.show_popup(self.yesTextList[len - 1]);
+                        } else {
+                            self.show_popup(self.yesTextList[self.yesTimes]);
+                        }
+                        self.yesTimes++;
+                    },
+                    no: function () {
+                        var self = this;
+                        var len = self.noTextList.length;
+                        if (self.noTimes >= len) {
+                            self.noTimes = 0;
+                        }
+                        self.show_popup(self.noTextList[self.noTimes]);
+                        self.noTimes++;
+                    }
+                }
+            })
+        })()
+    </script>
+</body>
+
+</html>
